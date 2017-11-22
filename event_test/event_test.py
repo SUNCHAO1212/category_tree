@@ -14,6 +14,7 @@ except:
 import json
 import ahocorasick
 import codecs
+import time
 import chardet
 import re
 
@@ -97,6 +98,7 @@ def judge(title):
                             path_dict['level5'] = item[1]['word']
                             print(temp, end='')
             my_dict['path'].append(path_dict)
+            my_dict['create_time'] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
             print('')
     except Exception as e:
         fe = open('log_files/error.txt', 'ab')
